@@ -3,15 +3,10 @@ package com.example.activites
 import android.content.Context
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import android.widget.Button
-import android.widget.TextView
-import androidx.appcompat.app.AlertDialog
+import androidx.fragment.app.Fragment
 
-class FirstFragment : Fragment(R.layout.fragment_first) {
+class SecondFragment : Fragment(R.layout.fragment_second) {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -26,9 +21,6 @@ class FirstFragment : Fragment(R.layout.fragment_first) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         Log.d(TAG, "onViewCreated: ")
-        view.findViewById<TextView>(R.id.first_button).setOnClickListener {
-            PurchaseConfirmationDialogFragment().show(parentFragmentManager, PurchaseConfirmationDialogFragment.TAG)
-        }
     }
 
     override fun onStart() {
@@ -65,10 +57,14 @@ class FirstFragment : Fragment(R.layout.fragment_first) {
         super.onDetach()
         Log.d(TAG, "onDetach: ")
     }
-
     companion object {
+
         @JvmStatic
-        fun newInstance() = FirstFragment()
-        private const val TAG = "MainActivity : First"
+        fun newInstance() = SecondFragment()
+        private const val TAG = "MainActivity : Second"
+
+
     }
+
+
 }
